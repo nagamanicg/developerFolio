@@ -1,0 +1,162 @@
+@import "../../_globalColor";
+
+.ctf-header {
+    margin-bottom: 2rem;
+}
+
+.ctf-header-title {
+    font-size: 56px;
+    font-weight: 400;
+}
+
+.ctf-header-subtitle {
+    font-size: 20px;
+    margin-top: 0.5rem;
+}
+
+.ctf-cards-div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.ctf-card {
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.ctf-card-light {
+    background-color: $lightBackground2;
+    box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
+    border: 1px solid $lightBorder1;
+}
+
+.ctf-card-dark {
+    background-color: $darkBackground;
+    box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
+    border: 1px solid $lightBorder1;
+}
+
+.ctf-card:hover {
+    box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+    transform: translateY(-2px);
+}
+
+.ctf-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.ctf-card-icon {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.ctf-card-logo-wrapper {
+    width: 4rem;
+    height: 4rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ctf-card-logo-img {
+    object-fit: contain;
+    width: 4rem;
+    height: 4rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+    border-radius: 10px;
+    background: #fff;
+    padding: 0.35rem;
+}
+
+.ctf-card-title-group {
+    flex: 1;
+    min-width: 0;
+}
+
+.ctf-card-name {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: $textColor;
+}
+
+.ctf-card-date {
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.6;
+    color: $textColor;
+}
+
+.ctf-card-placement {
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.ctf-card-desc {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 0.75rem 0;
+}
+
+.ctf-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.ctf-tag {
+    padding: 0.25rem 0.7rem;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.ctf-tag-light {
+    background-color: #e8eaf6;
+    color: #3949ab;
+}
+
+.ctf-tag-dark {
+    background-color: rgba(102, 126, 234, 0.2);
+    color: #a5b4fc;
+}
+
+/* Media Query */
+@media (max-width: 1380px) {
+    .ctf-header-title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ctf-header-title {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .ctf-header-subtitle {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .ctf-card-header {
+        flex-wrap: wrap;
+    }
+
+    .ctf-card-name {
+        font-size: 16px;
+    }
+}

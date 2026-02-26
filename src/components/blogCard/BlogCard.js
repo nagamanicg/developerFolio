@@ -1,24 +1,16 @@
 import React from "react";
 import "./BlogCard.scss";
+import { Link } from "react-router-dom";
 
-export default function BlogCard({blog, isDark}) {
-  function openUrlInNewTab(url, name) {
-    if (!url) {
-      console.log(`URL for ${name} not found`);
-      return;
-    }
-    var win = window.open(url, "_blank");
-    win.focus();
-  }
-
+export default function BlogCard({ blog, isDark }) {
   return (
-    <div onClick={() => openUrlInNewTab(blog.url, blog.title)}>
+    <div>
       <div className={isDark ? "blog-container dark-mode" : "blog-container"}>
-        <a
+        <Link
           className={
             isDark ? "dark-mode blog-card blog-card-shadow" : "blog-card"
           }
-          href="#blog"
+          to={blog.url}
         >
           <h3 className={isDark ? "small-dark blog-title" : "blog-title"}>
             {blog.title}
@@ -29,7 +21,7 @@ export default function BlogCard({blog, isDark}) {
           <div className="go-corner">
             <div className="go-arrow">→</div>
           </div>
-        </a>
+        </Link>
       </div>
     </div>
   );

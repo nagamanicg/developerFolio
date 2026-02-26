@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="32" fill="#55198b"/>
+  <!-- Hair (dark brown, long) -->
+  <ellipse cx="32" cy="28" rx="18" ry="19" fill="#2c1810"/>
+  <ellipse cx="32" cy="48" rx="14" ry="14" fill="#2c1810"/>
+  <!-- Face -->
+  <ellipse cx="32" cy="30" rx="14" ry="15" fill="#f5d0a9"/>
+  <!-- Eyes -->
+  <ellipse cx="26" cy="29" rx="2.2" ry="2.5" fill="#2c1810"/>
+  <ellipse cx="38" cy="29" rx="2.2" ry="2.5" fill="#2c1810"/>
+  <!-- Eye highlights -->
+  <circle cx="26.8" cy="28.2" r="0.8" fill="#fff"/>
+  <circle cx="38.8" cy="28.2" r="0.8" fill="#fff"/>
+  <!-- Subtle smile -->
+  <path d="M27 35 Q32 39 37 35" stroke="#c9886e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- Blush -->
+  <ellipse cx="23" cy="34" rx="3" ry="1.8" fill="#f0b0a0" opacity="0.4"/>
+  <ellipse cx="41" cy="34" rx="3" ry="1.8" fill="#f0b0a0" opacity="0.4"/>
+  <!-- Bangs -->
+  <path d="M18 24 Q22 14 32 16 Q28 22 20 24 Z" fill="#2c1810"/>
+  <path d="M46 24 Q42 14 32 16 Q36 22 44 24 Z" fill="#2c1810"/>
+  <!-- Body/shoulders hint -->
+  <path d="M16 58 Q16 46 32 44 Q48 46 48 58 Z" fill="#7c3aed"/>
+</svg>

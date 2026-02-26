@@ -1,0 +1,203 @@
+@import "../../_globalColor";
+
+.blog-article-main {
+    min-height: 80vh;
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 8rem 1.5rem 6rem 1.5rem;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    color: $buttonColor;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    &:hover {
+        transform: translateX(-6px);
+        text-shadow: 0px 4px 10px rgba($buttonColor, 0.3);
+    }
+}
+
+.article-container {
+    background: $lightBackground1;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05), 0 5px 15px rgba(0, 0, 0, 0.03);
+    border-radius: 16px;
+    padding: 4rem;
+    line-height: 1.8;
+    transition: all 0.3s ease;
+}
+
+.dark-mode .article-container {
+    background: $darkBackground;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.article-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: $titleColor;
+    line-height: 1.2;
+    letter-spacing: -1px;
+
+    &.dark-mode {
+        color: $textColorDark;
+    }
+}
+
+.article-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: $buttonColor;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    border-radius: 2px;
+}
+
+.article-hero-image-container {
+    width: 100%;
+    margin-bottom: 4rem;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    .dark-mode & {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+}
+
+.article-hero-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+
+    &:hover {
+        transform: scale(1.03);
+    }
+}
+
+.article-content {
+    font-size: 1.2rem;
+    color: #222222;
+    /* High-contrast elegant black */
+    line-height: 1.9;
+    letter-spacing: 0.2px;
+
+    &.dark-mode {
+        color: #f0f0f0;
+        opacity: 0.9;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: $titleColor;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+
+        .dark-mode & {
+            color: $textColorDark;
+        }
+    }
+
+    p {
+        margin-bottom: 2rem;
+    }
+
+    .blog-list {
+        background: rgba($buttonColor, 0.04);
+        border-left: 4px solid $buttonColor;
+        padding: 1.5rem 1.5rem 1.5rem 3rem;
+        border-radius: 0 8px 8px 0;
+        margin-bottom: 2.5rem;
+        list-style: none;
+
+        .dark-mode & {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        li {
+            margin-bottom: 1rem;
+            position: relative;
+
+            &::before {
+                content: "❖";
+                color: $buttonColor;
+                position: absolute;
+                left: -1.8rem;
+                font-size: 1rem;
+                top: 2px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            strong {
+                color: $titleColor;
+                font-weight: 700;
+
+                .dark-mode & {
+                    color: $textColorDark;
+                }
+            }
+        }
+    }
+}
+
+.error-not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 60vh;
+    box-shadow: none !important;
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: $titleColor;
+        font-weight: 700;
+    }
+
+    a {
+        color: $buttonColor;
+        text-decoration: none;
+        font-weight: 500;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-article-main {
+        padding: 5rem 1rem 3rem 1rem;
+    }
+
+    .article-container {
+        padding: 2.5rem 1.5rem;
+        border-radius: 12px;
+    }
+
+    .article-title {
+        font-size: 2.2rem;
+    }
+
+    .article-content {
+        font-size: 1.05rem;
+    }
+}

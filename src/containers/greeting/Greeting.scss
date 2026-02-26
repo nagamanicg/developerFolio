@@ -6,38 +6,55 @@
   margin: 0px auto;
   margin-top: 4rem;
 }
+
 .greet-main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
+  width: 100%;
+  padding: 40px 5%;
+  margin: 0 auto;
+  margin-top: 0;
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 40%, #ce93d8 100%);
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.greet-main-dark {
+  background: none;
 }
 
 .greeting-main {
   display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .subTitle {
   color: $subTitle !important;
 }
 
-.greeting-main {
-  display: flex;
+.greeting-text-div {
+  flex: 1 1 60%;
+  min-width: 0;
 }
 
-.greeting-main > * {
-  flex: 1;
-  margin-bottom: 30px;
+.greeting-image-div {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .empty-div {
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .button-greeting-div {
   display: flex;
-  margin-top: 40px;
+  margin-top: 20px;
 }
+
 .download-link-button {
   text-decoration: none;
 }
@@ -49,13 +66,22 @@
 }
 
 .greeting-text-p {
-  font-size: 30px;
-  line-height: 40px;
+  font-size: 22px;
+  line-height: 34px;
 }
 
-.greeting-image-div > img {
-  max-width: 100%;
-  height: auto;
+.greeting-image-div>img.profile-image {
+  width: 260px;
+  height: 300px;
+  border-radius: 4px;
+  object-fit: cover;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border: none;
+  display: block;
+}
+
+.greeting-image-div>img.profile-image:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .wave-emoji {
@@ -70,21 +96,27 @@
   0% {
     transform: rotate(0deg);
   }
+
   10% {
     transform: rotate(-10deg);
   }
+
   20% {
     transform: rotate(12deg);
   }
+
   30% {
     transform: rotate(-10deg);
   }
+
   40% {
     transform: rotate(9deg);
   }
+
   50% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(0deg);
   }
@@ -95,28 +127,41 @@
   .greeting-text {
     font-size: 50px;
   }
+
   .greeting-text-p {
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 28px;
   }
 }
+
 @media (max-width: 768px) {
   .button-greeting-div {
     justify-content: space-around;
   }
+
   .greeting-text {
     font-size: 30px;
     text-align: center;
   }
+
   .greeting-text-p {
     font-size: 16px;
     line-height: normal;
     text-align: center;
   }
+
   .greeting-main {
-    display: block;
+    flex-direction: column;
   }
+
   .greeting-image-div {
-    height: 256px;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .greeting-image-div>img.profile-image {
+    width: 200px;
+    height: 230px;
   }
 }
 

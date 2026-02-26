@@ -1,22 +1,22 @@
-import React, {useContext} from "react";
-import {Fade} from "react-reveal";
+import React, { useContext } from "react";
+import { Fade } from "react-reveal";
 import emoji from "react-easy-emoji";
 import "./Greeting.scss";
 import landingPerson from "../../assets/lottie/landingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
-import {illustration, greeting} from "../../portfolio";
+import { illustration, greeting } from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Greeting() {
-  const {isDark} = useContext(StyleContext);
+  const { isDark } = useContext(StyleContext);
   if (!greeting.displayGreeting) {
     return null;
   }
   return (
     <Fade bottom duration={1000} distance="40px">
-      <div className="greet-main" id="greeting">
+      <div className={isDark ? "greet-main greet-main-dark" : "greet-main"} id="greeting">
         <div className="greeting-main">
           <div className="greeting-text-div">
             <div>
@@ -24,8 +24,7 @@ export default function Greeting() {
                 className={isDark ? "dark-mode greeting-text" : "greeting-text"}
               >
                 {" "}
-                {greeting.title}{" "}
-                <span className="wave-emoji">{emoji("👋")}</span>
+                {greeting.title}
               </h1>
               <p
                 className={
@@ -42,25 +41,26 @@ export default function Greeting() {
                 <Button text="Contact me" href="#contact" />
                 {greeting.resumeLink && (
                   <a
-                    href={require("./resume.pdf")}
-                    download="Resume.pdf"
+                    href={greeting.resumeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="download-link-button"
                   >
-                    <Button text="Download my resume" />
+                    <Button text="See my resume" />
                   </a>
                 )}
               </div>
             </div>
           </div>
           <div className="greeting-image-div">
-            {illustration.animated ? (
-              <DisplayLottie animationData={landingPerson} />
-            ) : (
-              <img
-                alt="man sitting on table"
-                src={require("../../assets/images/manOnTable.svg")}
-              ></img>
-            )}
+            <img
+              alt="Nagamani"
+              src={isDark
+                ? require("../../assets/images/profile-dark.jpeg")
+                : require("../../assets/images/profile.jpeg")
+              }
+              className="profile-image"
+            />
           </div>
         </div>
       </div>

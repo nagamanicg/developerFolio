@@ -1,12 +1,35 @@
 @import "../../_globalColor";
 
+.software-skills-main-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.skill-category-container {
+  flex: 1 1 45%;
+  /* Two columns roughly */
+  margin-bottom: 2rem;
+  min-width: 250px;
+}
+
+.skill-category-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: $subTitle;
+  border-bottom: 1px solid rgba(166, 172, 205, 0.2);
+  padding-bottom: 5px;
+}
+
 .dev-icons {
   padding-left: 0;
   list-style: none;
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 0px;
   margin-top: 0px;
-  text-align: center;
+  text-align: left;
 }
 
 .software-skill-inline {
@@ -15,17 +38,32 @@
   margin-bottom: 20px;
 }
 
-.software-skill-inline > i {
+.software-skill-inline>i:not(.colored) {
   color: $subTitle;
 }
 
-.software-skill-inline > i:hover {
+.software-skill-inline:hover>i,
+.software-skill-inline:hover>.skill-image-icon {
   color: $skillsColor;
 }
-.software-skill-inline > p {
+
+.skill-image-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 0;
+  display: block;
+  margin: 0 auto;
+
+  .dark-mode & {
+    filter: invert(1);
+  }
+}
+
+.software-skill-inline>p {
   color: $subTitle;
   font-size: 10px;
 }
-.software-skill-inline > i:hover ~ p {
+
+.software-skill-inline>i:hover~p {
   color: $skillsColor;
 }
